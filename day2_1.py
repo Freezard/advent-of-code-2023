@@ -1,6 +1,8 @@
-"""Advent of Code 2023 Day 2-1"""
+"Advent of Code 2023 Day 2-1"
 
 def main():
+    "Main function"
+
     total_cubes = {
         'red': 12,
         'green': 13,
@@ -8,7 +10,7 @@ def main():
     }
     sum_valid_ids = 0
 
-    lines = open('day2-input.txt', 'r').readlines()
+    lines = open('day2-input.txt', 'r', encoding='utf-8').readlines()
     lines = [line.strip() for line in lines]
 
     for line_index, line in enumerate(lines):

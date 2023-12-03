@@ -4,7 +4,9 @@
 import re
 
 def main():
-    lines = open('day1-input.txt', 'r').readlines()
+    "Main function"
+
+    lines = open('day1-input.txt', 'r', encoding='utf-8').readlines()
 
     text_to_numbers = {
         "one": 1,
@@ -21,7 +23,7 @@ def main():
     def find_first_word(line, line_index):
         lowest_position = -1
         lowest_word = ""
-        for word, number in text_to_numbers.items():
+        for word in text_to_numbers:
             pos = line.find(word)
             if pos != -1:
                 if lowest_position == -1 or pos < lowest_position:

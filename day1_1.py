@@ -1,9 +1,11 @@
-"""Advent of Code 2023 Day 1-1"""
+"Advent of Code 2023 Day 1-1"
 
 import re
 
 def main():
-    lines = open('day1-input.txt', 'r').readlines()
+    "Main function"
+
+    lines = open('day1-input.txt', 'r', encoding='utf-8').readlines()
     stripped_lines = [re.sub(r'\D', '', line) for line in lines]
 
     calibration_values = []

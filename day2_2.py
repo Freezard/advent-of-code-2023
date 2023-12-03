@@ -1,14 +1,16 @@
-"""Advent of Code 2023 Day 2-2"""
+"Advent of Code 2023 Day 2-2"
 
 import math
 
 def main():
+    "Main function"
+
     sum_set_powers = 0
 
-    lines = open('day2-input.txt', 'r').readlines()
+    lines = open('day2-input.txt', 'r', encoding='utf-8').readlines()
     lines = [line.strip() for line in lines]
 
-    for line_index, line in enumerate(lines):
+    for line in lines:
         minimum_cubes = {
             'red': 0,
             'green': 0,
