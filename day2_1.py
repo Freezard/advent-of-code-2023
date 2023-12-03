@@ -15,12 +15,11 @@ def main():
 
     for line_index, line in enumerate(lines):
         game_id = line_index + 1
-        cubes = line.split(': ')[1]
-        cube_grabs = cubes.split('; ')
+        cube_grabs = line.split(': ')[1].split('; ')
         valid_cube_grabs = True
-        for cube in cube_grabs:
-            cube_grab = cube.split(', ')
-            for cube in cube_grab:
+        for cube_grab in cube_grabs:
+            cube_grab_cubes = cube_grab.split(', ')
+            for cube in cube_grab_cubes:
                 cube_info = cube.split()
                 amount = int(cube_info[0])
                 color = cube_info[1]
