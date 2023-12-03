@@ -1,4 +1,5 @@
-"""Advent of Code 2023 Day 1-2"""
+"""Advent of Code 2023 Day 1-2
+   total_sum is off by 20 due to misunderstood instructions"""
 
 import re
 
