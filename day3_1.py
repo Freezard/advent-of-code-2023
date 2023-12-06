@@ -13,9 +13,9 @@ def main():
         "Numbers can be 1-3 digits long"
 
         number = char
-        for a in range(1, 3):
-            if x + a <= len(row) - 1 and row[x + a].isdigit():
-                number += row[x + a]
+        for i in range(1, 3):
+            if x + i <= len(row) - 1 and row[x + i].isdigit():
+                number += row[x + i]
             else:
                 break
         return int(number)
@@ -24,11 +24,15 @@ def main():
         if ((x + 1 <= len(row) - 1 and not row[x + 1].isdigit() and row[x + 1] != '.')
             or (x - 1 >= 0 and not row[x - 1].isdigit() and row[x - 1] != '.')
             or (not map_2d[y - 1][x].isdigit() and map_2d[y - 1][x] != '.')
-            or (y + 1 <= len(map_2d) - 1 and not map_2d[y + 1][x].isdigit() and map_2d[y + 1][x] != '.')
+            or (y + 1 <= len(map_2d) - 1 and
+                not map_2d[y + 1][x].isdigit() and map_2d[y + 1][x] != '.')
             or (not map_2d[y - 1][x - 1].isdigit() and map_2d[y - 1][x - 1] != '.')
-            or (x + 1 <= len(row) - 1 and not map_2d[y - 1][x + 1].isdigit() and map_2d[y - 1][x + 1] != '.')
-            or (y + 1 <= len(map_2d) - 1 and not map_2d[y + 1][x - 1].isdigit() and map_2d[y + 1][x - 1] != '.')
-            or (y + 1 <= len(map_2d) - 1 and x + 1 <= len(row) - 1 and not map_2d[y + 1][x + 1].isdigit() and map_2d[y + 1][x + 1] != '.')
+            or (x + 1 <= len(row) - 1 and
+                not map_2d[y - 1][x + 1].isdigit() and map_2d[y - 1][x + 1] != '.')
+            or (y + 1 <= len(map_2d) - 1 and
+                not map_2d[y + 1][x - 1].isdigit() and map_2d[y + 1][x - 1] != '.')
+            or (y + 1 <= len(map_2d) - 1 and x + 1 <= len(row) - 1 and
+                not map_2d[y + 1][x + 1].isdigit() and map_2d[y + 1][x + 1] != '.')
         ):
             valid_numbers.append(number)
             return True
@@ -39,10 +43,10 @@ def main():
     for y, row in enumerate(map_2d):
         for x, char in enumerate(row):
             if char.isdigit():
-                #Find the whole number of first digit
+                # Find the whole number of first digit
                 if x - 1 < 0 or not row[x - 1].isdigit():
                     number = find_number()
-                #Check if valid number
+                # Check if valid number
                 if not validated:
                     validated = validate_number()
             else:
